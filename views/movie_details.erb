@@ -1,0 +1,31 @@
+<html lang="en">
+  <head>
+    <title><%= @details_title %></title>
+  </head>
+
+  <body>
+    <h1>"<%= @details_title %>" details:</h1>
+
+    </br>
+
+    <h3>GENRE:</h3><%= @movie_details[0]["genre"] %>
+
+    </br></br>
+
+    <h3>STUDIO:</h3><%= @movie_details[0]["studio"] %>
+
+    </br></br>
+
+    <h3>ACTORS:</h3>
+    <ul>
+      <% @movie_details.each do |movie|%>
+        <li><strong><%=movie["character"]%></strong> played by <strong><a href="../actors/<%=movie["id"]%>"><%=movie["actor"]%></a></strong></li>
+        </br>
+      <% end %>
+    </ul>
+
+
+    <h4><a href='/movies'>Back to Movies</a></h4>
+
+  </body>
+</html>
